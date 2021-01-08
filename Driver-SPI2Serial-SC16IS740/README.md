@@ -12,8 +12,6 @@ _create a backup copy of your µSD card before applying these steps!_
 
 Install one of the listed RASPBIAN operating system versions from below: 
 
-https://www.raspberrypi.org/software/operating-systems/
-
 1) **Raspberry Pi OS Kernel Version 5.4
 
 unter https://www.raspberrypi.org/software/operating-systems/ you can find a the current version of the PI OS.
