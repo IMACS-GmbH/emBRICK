@@ -42,7 +42,7 @@ function patchfile {
 }
 
 # Unser Github Server
-REPORAW="https://raw.githubusercontent.com/52serk/embrick_raspberry/main"
+REPORAW="https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/master/Driver-SPI2Serial-SC16IS740"
 
 ERR='\033[0;31m'
 INFO='\033[0;32m'
@@ -71,7 +71,7 @@ KERNELVER=$(($VERSION*100+$PATCHLEVEL));
 
 if [ $KERNELVER -le 408 ]; then 
  echo -e "$ERR WARNING: kernel is outdated - $NC" 1>&2
- if (whiptail --title "RaspberryBrick Installation Script" --yesno "WARNING: kernel is outdated ($KERNEL < 4.9.0)\n\nDo you want to continue anyway?" 10 60) then
+ if (whiptail --title "Driver-SPI2Serial-SC16IS740 Installation Script" --yesno "WARNING: kernel is outdated ($KERNEL < 4.9.0)\n\nDo you want to continue anyway?" 10 60) then
     echo ""
  else
    exit 0
@@ -105,7 +105,7 @@ These software components will be installed:\n
 - libncurses5-dev, gcc, build-essential, raspberrypi-kernel-headers, lib, autoconf, libtool, libsocketcan, can-utils\n
 continue installation?"
 
-if (whiptail --title "RaspberryBrick Installation Script" --yesno "$WELCOME" 20 60) then
+if (whiptail --title "Driver-SPI2Serial-SC16IS740 Installation Script" --yesno "$WELCOME" 20 60) then
     echo ""
 else
     exit 0
@@ -127,9 +127,9 @@ else
 fi
 
 
-rm -rf /tmp/embrick_raspberry
-mkdir -p /tmp/embrick_raspberry
-cd /tmp/embrick_raspberry
+rm -rf /tmp/Driver-SPI2Serial-SC16IS740
+mkdir -p /tmp/Driver-SPI2Serial-SC16IS740
+cd /tmp/Driver-SPI2Serial-SC16IS740
 
 
 # compile driver modules
@@ -150,9 +150,9 @@ if (whiptail --title "emPC-A/RPI3 Installation Script" --yesno "$OPTIMIZATIONS" 
  
  # TODO: create patches 
  
- sed -i 's/MODULE_DESCRIPTION("/MODULE_DESCRIPTION("optimized for CAE_Z-RaspberryBrick-1#-RB_0#: /' spi-bcm2835.c
- sed -i 's/MODULE_DESCRIPTION("/MODULE_DESCRIPTION("optimized for CAE_Z-RaspberryBrick-1#-RB_0#: /' mcp251x.c
- sed -i 's/MODULE_DESCRIPTION("/MODULE_DESCRIPTION("optimized for CAE_Z-RaspberryBrick-1#-RB_0#k: /' sc16is7xx.c
+ sed -i 's/MODULE_DESCRIPTION("/MODULE_DESCRIPTION("optimized for SPI2Serial-SC16IS740: /' spi-bcm2835.c
+ sed -i 's/MODULE_DESCRIPTION("/MODULE_DESCRIPTION("optimized for SPI2Serial-SC16IS740: /' mcp251x.c
+ sed -i 's/MODULE_DESCRIPTION("/MODULE_DESCRIPTION("optimized for SPI2Serial-SC16IS740: /' sc16is7xx.c
  
  
  # SPI driver
@@ -339,7 +339,7 @@ chmod +x /usr/sbin/empc-can-configbaudrate.sh
 
 
 if [ ! -f "/usr/local/bin/cansend" ]; then
- if (whiptail --title "emPC-A/RPI3 Installation Script" --yesno "Third party SocketCan library and utilities\n\n- libsocketcan-0.0.10\n- can-utils\n - candump\n - cansend\n - cangen\n\ninstall?" 16 60) then
+ if (whiptail --title "Driver-SPI2Serial-SC16IS740 Installation Script" --yesno "Third party SocketCan library and utilities\n\n- libsocketcan-0.0.10\n- can-utils\n - candump\n - cansend\n - cangen\n\ninstall?" 16 60) then
 
     apt-get -y install git
     apt-get -y install autoconf
@@ -393,7 +393,7 @@ fi
 
 cd /
 
-if (whiptail --title "emPC-A/RPI3 Installation Script" --yesno "Installation completed! reboot required\n\nreboot now?" 12 60) then
+if (whiptail --title "Driver-SPI2Serial-SC16IS740 Installation Script" --yesno "Installation completed! reboot required\n\nreboot now?" 12 60) then
 
     reboot
 
