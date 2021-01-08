@@ -175,7 +175,7 @@ echo "obj-m += mcp251x.o" >>Makefile
 echo "obj-m += spi-bcm2835.o" >>Makefile
 
 echo "all:">>Makefile
-echo -e "\tmake -C /lib/modules/$KERNEL/build M=/tmp/embrick_raspberry modules" >>Makefile
+echo -e "\tmake -C /lib/modules/$KERNEL/build M=/tmp/Driver-SPI2Serial-SC16IS740 modules" >>Makefile
 
 make
 
