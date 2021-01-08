@@ -2,7 +2,7 @@
 # http://rpf.io/configtxt
 # Some settings may impact device functionality. See link above for details
 #
-# Optimized for CAE_Z-RaspberryBrick-1#-RB_0#
+# Optimized for SPI2Serial-SC16IS740
 # https://www.janztec.com/en/products/embedded-computing/embedded-pc/empc-arpi3/
 
 # uncomment if you get no picture on HDMI for a default "safe" mode
