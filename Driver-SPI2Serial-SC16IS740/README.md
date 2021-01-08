@@ -1,4 +1,4 @@
-# # CAE_Z-RaspberryBrick-1#-RB_0# by IMACS GmbH
+# # Driver-SPI2Serial-SC16IS740# by IMACS GmbH
 
 This script installs and configures Linux **Socket CAN**, **Serial port RS232/RS485** and **RTC** drivers
 
@@ -12,20 +12,22 @@ _create a backup copy of your µSD card before applying these steps!_
 
 Install one of the listed RASPBIAN operating system versions from below: 
 
-1) **Raspbian Stretch with desktop version 2018-11-13 or later**
+https://www.raspberrypi.org/software/operating-systems/
+
+1) **Raspberry Pi OS Kernel Version 5.4
+
+unter https://www.raspberrypi.org/software/operating-systems/ you can find a the current version of the PI OS.
 
    _install.sh_ script uses the mainline kernel driver sources with only a few source code patches, see _install.sh_ for more details. Our performance optimizations of the CAN, UART and SPI drivers are currently not included in these mainline drivers.   
 
-   https://www.raspberrypi.org/downloads/raspbian/
 
-
-**Step 2a:**
+**Step 2:**
 
 
 ```
 sudo bash
 cd /tmp
-wget https://raw.githubusercontent.com/52serk/embrick_raspberry/main/install.sh -O install.sh
+wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/master/Driver-SPI2Serial-SC16IS740/install.sh -O install.sh
 bash install.sh
 ```
 
