@@ -1,0 +1,17 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2710";
+
+    fragment@0 {
+        target = <&leds>;
+        __overlay__ {
+            act_led: act {
+                label = "led0";
+                linux,default-trigger = "mmc0";
+                gpios = <&gpio 5 0>;
+            };
+        };
+    };
+};
