@@ -3,7 +3,7 @@
 # Some settings may impact device functionality. See link above for details
 #
 # Optimized for SPI2Serial-SC16IS740
-# https://www.janztec.com/en/products/embedded-computing/embedded-pc/empc-arpi3/
+
 
 # uncomment if you get no picture on HDMI for a default "safe" mode
 #hdmi_safe=1
