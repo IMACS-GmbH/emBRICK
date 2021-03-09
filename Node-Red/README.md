@@ -17,7 +17,7 @@ This Module provides a Method to use your emBrick I/O Systems in Node-Red.
 ## Install
 To install use the 'Menu - Palette verwalten' option and search for 'node-red-contrib-embrick' or run the following command in your Node-RED user directory - typically `~/.node-red`:
 
-    npm i node-red-contrib-embrick
+    npm i @embrick/red-contrib-embrick
 
 Restart your Node-RED instance and you should have UI nodes available in the palette and a new `dashboard` tab in the
 right side panel. The UI interface is available at <http://localhost:1880/ui> (if the default settings are used).
