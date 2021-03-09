@@ -1,0 +1,78 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Analog Output',{
+        category: 'embrick',
+        color: '#47D6F3',
+        defaults: {
+          name: {value:""},
+          topic: {value:""},
+          brick: {value:0, required:true},
+          byte_pos: {value:0, required:true},
+          digits_out_lower: {value:0},
+          digits_out_upper: {value:0},
+          process_unit: {value:""},
+          process_out_lower: {value: 0},
+          process_out_upper: {value: 0}
+
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-sign-out",
+        label: function() {
+            return this.name||"Analog Output";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="Analog Output">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+		<label for="node-input-topic"><i class="fa fa-tag"></i>Topic</label>
+		<input type="text" id="node-input-topic" placeholder="Topic">
+	</div>
+	<div class="form-row">
+		<label for="node-input-brick"><i class="fa fa-microchip"></i> Brick</label>
+		<input type="number" id="node-input-brick" placeholder="1">
+	</div>
+	<div class="form-row">
+		<label for="node-input-byte_pos"><i class="fa fa-sign-out"></i> BytePos</label>
+		<input type="number" id="node-input-byte_pos" placeholder="1">
+	</div>
+  <div class="form-row">
+    <label for="node-input-digits_out_lower"><i class="fa fa-sign-in"></i> Output Digit Value Lower</label>
+    <input type="number" id="node-input-digits_out_lower" placeholder=0 min=0 max=65535>
+  </div>
+  <div class="form-row">
+    <label for="node-input-digits_out_upper"><i class="fa fa-sign-in"></i> Output Digit Value Upper</label>
+    <input type="number" id="node-input-digits_out_upper" placeholder=0 min=0 max=65535>
+  </div>
+  <div class="form-row">
+		<label for="node-input-process_unit"><i class="fa fa-sign-in"></i> process Unit</label>
+		<input type="text" id="node-input-process_unit" placeholder="%">
+	</div>
+  <div class="form-row">
+    <label for="node-input-process_out_lower"><i class="fa fa-sign-in"></i> Output process Value Lower</label>
+    <input type="number" id="node-input-process_out_lower" placeholder=0 min=0 max=65535>
+  </div>
+  <div class="form-row">
+    <label for="node-input-process_out_upper"><i class="fa fa-sign-in"></i> Output process Value Upper</label>
+    <input type="number" id="node-input-process_out_upper" placeholder=0 min=0 max=65535>
+  </div>
+</script>
+
+<script type="text/html" data-help-name="Analog Output">
+  <h1> Description </h1>
+    <p> A Analog Output node write 2 Bytes (16Bit) from Output Buffer to change it on the Brick </p>
+  <h2> Name </h2>
+    <p> Here you can give your Node a name for a better Organisation </p>
+    <p> If empty the Node will be automatically named as >Analog Output<. </p>
+  <h2> Topic </h2>
+    <p> This will be sended within the message as msg.topic.
+    <p> If this empty the Node will be send as msg.topic > AO: Brick Number, Byte Position< </p>
+  <h2> Brick </h2>
+    <p> Here you can type the Brick Number. The Brick always beginning from 0, also like 0 equal to first Brick. </p>
+  <h2> BytePos </h2>
+    <p> Type in which Byte Position the Data will be written. </p>
+</script>
