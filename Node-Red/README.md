@@ -31,6 +31,9 @@ ui: { path: "ui" },
 ```
 
 ## Settings Connection
+![Image](./config-node.png)
+Double Click on 'change updateRate (in ms), ip-address or port' if you use the Remote Master per Ethernet to change the Updaterate (in ms), ip-address or port.
+Double Clock on 'change updateRate(in ms), Modbus ID' to change the Updaterate (in ms) or the Modbus ID.
 
 ## Functions of the Nodes
 
