@@ -11,3 +11,5 @@ This Module provides a Method to use your emBrick I/O Systems in Node-Red.
 * [node-red-contrib-config](https://flows.nodered.org/node/node-red-contrib-config) (to set a flow value on start)
 * [node-red-contrib-modbus](https://flows.nodered.org/node/node-red-contrib-modbus) (If the Remote Master is connected serial)
 * [node-red-contrib-boolean-logic-ultimate](https://flows.nodered.org/node/node-red-contrib-boolean-logic-ultimate) (optionaly if you need AND,OR,XOR Gatter or a inverter Node)
+
+![Image](./demo.png)
