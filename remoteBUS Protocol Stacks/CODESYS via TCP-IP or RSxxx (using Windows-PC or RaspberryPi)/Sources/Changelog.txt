@@ -1,0 +1,11 @@
+Demo-Application for using emBRICK® with CODESYS
+
+25.6.2014: V0.01 created Application
+27.6.2014: V0.02 released Application
+23.11.2015: V0.03 added emBRICKLAN Protocoll V4
+12.07.2018: V0.04 updatet old Files and added new emBRICKs
+13.08.2018: V0.05 fixed in the library the length of the initialisation message from 7 to 6 bytes to support newer hardware.
+16.12.2019: V0.06 added RS485 support.
+08.05.2020: V0.07 added RS485 support for multiple remote slaves.
+17.06.2020: V0.08 removed Bug in Initialize routine.
+01.07.2020: V0.09 fixed Bug with wrong Byte Order.

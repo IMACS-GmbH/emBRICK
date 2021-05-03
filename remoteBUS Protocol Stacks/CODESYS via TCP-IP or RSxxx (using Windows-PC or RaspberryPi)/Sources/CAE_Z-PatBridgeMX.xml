@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceDescription xmlns="http://www.3s-software.com/schemas/DeviceDescription-1.0.xsd" xmlns:ts="http://www.3s-software.com/schemas/TargetSettings-0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Files namespace="localFiles">
+    <Language lang="en">
+      <File fileref="local" identifier="DeviceIcon">
+        <LocalFile>Logo_emBRICK_small_col_16.ico</LocalFile>
+      </File>
+      <File fileref="local" identifier="DeviceBmp">
+        <LocalFile>emBRICK_600.png</LocalFile>
+      </File>
+    </Language>
+    </Files>  
+  <Types namespace="localTypes">
+  </Types>
+  <Strings namespace="local">
+    <Language lang="en">
+      <String identifier="ModelName">CAE_Z-PatBridgeMX</String>
+      <String identifier="DeviceDescription">The PatBridgeMX is a connection device between an emBRICK Remote Bus and a Local Bus.</String>
+      <String identifier="VendorName">emBRICK GmbH</String>
+      <String identifier="typename"></String>
+      <String identifier="typedescription">
+      </String>
+   </Language>
+  </Strings>
+  <Device hideInCatalogue="false">
+    <DeviceIdentification>
+      <Type>1611</Type>
+      <Id>0001 1-611</Id>
+      <Version>1.6</Version>
+    </DeviceIdentification>
+    <DeviceInfo>
+      <Name name="local:ModelName">CAE_Z-PatBridgeMX</Name>
+      <Description name="local:DeviceDescription">The PatBridgeMX is a connection device between an emBRICK Remote Bus and a Local Bus.</Description>
+      <Vendor name="local:VendorName">emBRICK GmbH</Vendor>
+      <OrderNumber>VIM0-0204A00</OrderNumber>
+      <Image name="localFiles:DeviceBmp" />
+      <Icon name="localFiles:DeviceIcon" />
+    </DeviceInfo>
+    <Connector moduleType="257" interface="Common.PCI" role="child" explicit="false" connectorId="1" hostpath="-1">
+      <InterfaceName name="local:PCI">PCI-Bus</InterfaceName>
+      <Slot count="1" allowEmpty="false"></Slot>
+    </Connector>
+    <Connector moduleType="40100" interface="MyCompany:Internal" role="parent" explicit="false" connectorId="2" hostpath="1">
+      <InterfaceName name="local:DP">Internal</InterfaceName>
+      <Var max="125" ></Var>
+      <DriverInfo needsBusCycle="true">
+        <RequiredLib libname="emCoSys" vendor="IMACS GmbH" version="3.3.1.1" identifier="emCoSys">
+          <FBInstance basename="$(DeviceName)_Instance" fbname="emCoSys">
+            <Initialize methodName="Initialize"/>
+          </FBInstance>
+        </RequiredLib>
+      </DriverInfo>
+      <HostParameterSet>
+        <Parameter ParameterId="393218" type="std:STRING">
+          <Attributes channel="none" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>'Please connect to Local-Master'</Default>
+          <Name name="local:Id393218">Manufacturer</Name>
+          <Description name="local:Id393218.Desc">Manufacturer of the device</Description>
+        </Parameter>
+        <Parameter ParameterId="393219" type="std:STRING">
+          <Attributes channel="none" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>'Please connect to Local-Master'</Default>
+          <Name name="local:Id393219">ModelName</Name>
+          <Description name="local:Id393219.Desc">Model name of the device</Description>
+        </Parameter>
+        <Parameter ParameterId="399996" type="std:UDINT">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>1</Default>
+          <Name name="local:COM_Type">Communication Type</Name>
+          <Description name="local:COM_Type">1-LAN, 2-RS485</Description>
+        </Parameter>
+		<Parameter ParameterId="399997" type="std:UDINT">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>1</Default>
+          <Name name="local:Modbus_Slave">Modbus Slave Number</Name>
+          <Description name="local:Modbus_Slave">Modbus Slave Number</Description>
+        </Parameter>
+        <Parameter ParameterId="399998" type="std:UDINT">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>1</Default>
+          <Name name="local:COM_Port">COM Port</Name>
+          <Description name="local:COM_Port">COM Port of Local-Master</Description>
+        </Parameter>
+        <Parameter ParameterId="399999" type="std:UDINT">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>460800</Default>
+          <Name name="local:COM_Baudrate">COM Baudrate</Name>
+          <Description name="local:COM_Baudrate">COM Baudrate of Local-Master</Description>
+        </Parameter>
+        <Parameter ParameterId="400001" type="std:STRING">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>'192.168.3.10'</Default>
+          <Name name="local:IP_Adress">IP-Adress</Name>
+          <Description name="local:IP_Adress">IP-Adress of Local-Master</Description>
+        </Parameter>
+        <Parameter ParameterId="400002" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:brickBUS_Size">brickBUS_Size</Name>
+          <Description name="local:brickBUS_Size">Number of connected emBRICK-Modules</Description>
+        </Parameter>
+        <Parameter ParameterId="400003" type="std:WORD">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:LocalMaster_ID">LocalMaster_ID</Name>
+          <Description name="local:LocalMaster_ID">ID of connected Local-Master</Description>
+        </Parameter>
+        <Parameter ParameterId="400004" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:LocalMaster_Version">LocalMaster_Version</Name>
+          <Description name="local:LocalMaster_Version">Version of connected Local-Master</Description>
+        </Parameter>
+        <Parameter ParameterId="400005" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:protocol_Version">Protocol_Version</Name>
+          <Description name="local:protocol_Version">Local-/Remote-Master Protocol Version</Description>
+        </Parameter>
+        <Parameter ParameterId="400006" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:manufacturer_ID">Manufacturer_ID</Name>
+          <Description name="local:manufacturer_ID">ID of Manufacturer</Description>
+        </Parameter>
+        <Parameter ParameterId="400007" type="std:WORD">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:connected_Periphery">Connected_Periphery</Name>
+          <Description name="local:connected_Periphery">Periphery connected to Local-Master</Description>
+        </Parameter>
+      </HostParameterSet>
+    </Connector>
+  </Device>
+</DeviceDescription>
