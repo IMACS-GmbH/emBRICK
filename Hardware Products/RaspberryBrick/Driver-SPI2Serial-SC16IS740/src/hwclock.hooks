@@ -1,0 +1,24 @@
+#!/bin/sh
+
+PREREQ=""
+prereqs()
+{
+    echo "$PREREQ"
+}
+
+case $1 in
+    prereqs)
+        prereqs
+        exit 0
+        ;;
+esac
+
+
+. /usr/share/initramfs-tools/hook-functions
+manual_add_modules i2c_dev
+manual_add_modules i2c_bcm2835
+manual_add_modules rtc_ds1307
+copy_exec /sbin/hwclock /sbin
+copy_exec /sbin/modprobe /sbin
+copy_exec /bin/date /bin
+

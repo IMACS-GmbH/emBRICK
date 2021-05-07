@@ -1,0 +1,76 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
+
+	fragment@0 {
+		target = <&gpio>;
+		__overlay__ {
+    
+			ttysc1_pins: ttysc1_pins {
+        			brcm,pins = <25>;
+        			brcm,function = <0>; /* input */
+      			};
+      
+      			ttysc1_cs_pins: ttysc1_cs_pins {
+				brcm,pins = <8>;
+				brcm,function = <1>; /* output */
+      			};
+
+		};
+	};
+
+	fragment@1 {
+		target = <&spi0>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			
+			//pinctrl-0 = <&ttysc0_pins &ttysc0_cs_pins>;			
+			//cs-gpios = <&gpio 7 1>;			
+
+			sc16is740_1: sc16is740@1 {
+				compatible = "nxp,sc16is740";
+				reg = <0>; /* CE0 */
+				clocks = <&sc16is740_1_clk>;
+				pinctrl-names = "default";
+				pinctrl-0 = <&ttysc1_pins>;
+				interrupt-parent = <&gpio>;
+				interrupts = <25 0x8>; /* IRQ_TYPE_LEVEL_LOW */				
+				#gpio-controller;
+				#gpio-cells = <2>;
+				spi-max-frequency = <4000000>;
+				status = "okay";
+
+				sc16is740_1_clk: sc16is740_1_clk {
+					compatible = "fixed-clock";
+					#clock-cells = <0>;
+					clock-frequency = <1843200>;
+				};
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <&aux>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+	
+	fragment@3 {
+        	target = <&spi0>;
+        	__overlay__ {
+            		status = "okay";
+            		spidev@0{
+                		status = "disabled";
+            		};
+        	};
+	};
+	
+
+    __overrides__ {
+      int_pin = <&sc16is740_1>,"interrupts:0";
+    };
+};
