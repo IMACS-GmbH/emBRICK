@@ -3,7 +3,7 @@
 export LC_ALL=C
 
 # Unser Github Server
-REPORAW="https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/master/Driver-SPI2Serial-SC16IS740"
+REPORAW="https://raw.githubusercontent.com/IMACS-GmbH/emBRICK-and-brickBUS/main/Hardware%20Products/RaspberryBrick/Driver-SPI2Serial-SC16IS740/"
 
 ERR='\033[0;31m'
 INFO='\033[0;32m'
