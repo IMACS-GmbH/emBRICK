@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceDescription xmlns="http://www.3s-software.com/schemas/DeviceDescription-1.0.xsd" xmlns:ts="http://www.3s-software.com/schemas/TargetSettings-0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Files namespace="localFiles">
+    <Language lang="en">
+      <File fileref="local" identifier="DeviceIcon">
+        <LocalFile>Logo_emBRICK_small_col_16.ico</LocalFile>
+      </File>
+      <File fileref="local" identifier="DeviceBmp">
+        <LocalFile>emBRICK_600.png</LocalFile>
+      </File>
+    </Language>
+    </Files>  
+	
+	// local Types definition 
+	
+  <Types namespace="localTypes">  
+	  
+	//local Type definition BYTE (including 8 BITs)
+	  
+	  <BitfieldType basetype="std:BYTE" name="TBYTE">
+      <Component identifier="Bit0" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit0</VisibleName>
+      </Component>
+      <Component identifier="Bit1" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit1</VisibleName>
+      </Component>
+      <Component identifier="Bit2" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit2</VisibleName>
+      </Component>
+      <Component identifier="Bit3" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit3</VisibleName>
+      </Component>
+      <Component identifier="Bit4" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit4</VisibleName>
+      </Component>
+      <Component identifier="Bit5" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit5</VisibleName>
+      </Component>
+      <Component identifier="Bit6" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit6</VisibleName>
+      </Component>
+      <Component identifier="Bit7" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit7</VisibleName>
+      </Component>
+    </BitfieldType>
+	
+	//local Type definition BYTE (including 6 BITs)
+	
+	<BitfieldType basetype="std:BYTE" name="TBYTE_6bit">
+      <Component identifier="Bit0" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit0</VisibleName>
+      </Component>
+      <Component identifier="Bit1" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit1</VisibleName>
+      </Component>
+      <Component identifier="Bit2" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit2</VisibleName>
+      </Component>
+      <Component identifier="Bit3" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit3</VisibleName>
+      </Component>
+      <Component identifier="Bit4" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit4</VisibleName>
+      </Component>
+      <Component identifier="Bit5" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit5</VisibleName>
+      </Component>
+    </BitfieldType>
+	
+	//local Type definition BYTE (including 4 BITs)	
+	
+    <BitfieldType basetype="std:BYTE" name="TBYTE_4bit">
+      <Component identifier="Bit0" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit0</VisibleName>
+      </Component>
+      <Component identifier="Bit1" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit1</VisibleName>
+      </Component>
+      <Component identifier="Bit2" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit2</VisibleName>
+      </Component>
+      <Component identifier="Bit3" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit3</VisibleName>
+      </Component>
+    </BitfieldType>
+	
+	//local Type definition BYTE (including 2 BITs)
+	
+    <BitfieldType basetype="std:BYTE" name="TBYTE_2bit">
+      <Component identifier="Bit0" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit0</VisibleName>
+      </Component>
+      <Component identifier="Bit1" type="std:BOOL">
+        <Default />
+        <VisibleName name="local:">Bit1</VisibleName>
+      </Component>
+    </BitfieldType>						
+  </Types>
+  //Hardware Description
+  <Strings namespace="local">
+    <Language lang="en">
+      <String identifier="ModelName">CAE_G-2RelNo4RelCo-01</String>
+      <String identifier="DeviceDescription">This Relay module includes six isolated Relays. Each can switch a current of max. 4A. The first two are closing contacts. The other four are changeover contacts. The state of each relay is visualized by an LED.</String>
+      <String identifier="VendorName">emBRICK GmbH</String>
+      <String identifier="typename">MyDevice_With_Lib</String>
+      <String identifier="typedescription">
+		A device that includes libs and automatically generates some FB instances from this libs.
+      </String>
+   </Language>
+  </Strings>
+  <Device hideInCatalogue="false">
+    <DeviceIdentification>
+      <Type>2301</Type>
+      <Id>0001 2-301</Id>
+      <Version>1.0</Version>
+    </DeviceIdentification>
+    <DeviceInfo>
+      <Name name="local:ModelName">CAE_G_2RelNo4RelCo-01</Name>
+      <Description name="local:DeviceDescription">This Relay module includes six isolated Relays. Each can switch a current of max. 4A. The first two are closing contacts. The other four are changeover contacts. The state of each relay is visualized by an LED.</Description>
+      <Vendor name="local:VendorName">emBRICK GmbH</Vendor>
+      <OrderNumber>VIM0-0105-01</OrderNumber>
+      <Image name="localFiles:DeviceBmp" />
+      <Icon name="localFiles:DeviceIcon" />
+    </DeviceInfo>
+    <Connector moduleType="40100" interface="MyCompany:Internal" role="child" explicit="false" connectorId="2" hostpath="-1">
+      <InterfaceName name="local:PCI">PCI-Bus</InterfaceName>
+      <Slot count="1" allowEmpty="false"></Slot>
+      <HostParameterSet>
+      <Parameter ParameterId="400001" type="std:WORD">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="read" onlineaccess="read" />
+          <Default>2301</Default>
+          <Name name="local:eDevID">Expected device ID</Name>
+          <Description name="local:eDevID">Expected device ID of the emBRICK®-module</Description>
+        </Parameter>
+        <Parameter ParameterId="400002" type="std:WORD">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:devID">Device ID</Name>
+          <Description name="local:devID">Device ID of the emBRICK®-module</Description>
+        </Parameter>
+        <Parameter ParameterId="400003" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:dlout">Data Length Out</Name>
+          <Description name="local:dlout">Size of Output-Buffer (MOSI)</Description>
+        </Parameter>
+        <Parameter ParameterId="400004" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:dlin">Data Length In</Name>
+          <Description name="local:dlin">Size of Input-Buffer (MISO)</Description>
+        </Parameter>
+        <Parameter ParameterId="400005" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:pv">Protocol-Version</Name>
+          <Description name="local:pv">Implemented emBRICK® Protocol-Version of the module</Description>
+        </Parameter>
+        <Parameter ParameterId="400006" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:hv">Hardware-Version</Name>
+          <Description name="local:hv">Hardware Version of the emBRICK®-module</Description>
+        </Parameter>
+        <Parameter ParameterId="400007" type="std:WORD">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:manID">Manufacturer ID</Name>
+          <Description name="local:manID">Manufacturer ID of the emBRICK®-module</Description>
+        </Parameter>
+         <Parameter ParameterId="400008" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:doout">Data Offset Out</Name>
+          <Description name="local:doout">Offset of Data Area(MOSI)</Description>
+        </Parameter>
+        <Parameter ParameterId="400009" type="std:BYTE">
+          <Attributes channel="diagack" download="true" functional="false" offlineaccess="readwrite" onlineaccess="read" />
+          <Default>0</Default>
+          <Name name="local:doin">Data Offset In</Name>
+          <Description name="local:doin">Offset of Data Area (MISO)</Description>
+        </Parameter>
+        <Parameter ParameterId="1000" type="std:BYTE">
+          <Attributes channel="input"/>
+          <Name name="local:status">Status</Name>
+          <Description>Status of the Module</Description>
+        </Parameter>
+  //Input Parameter
+  
+  //Output Parameter
+        <Parameter ParameterId="2000" type="localTypes:TBYTE_6bit">
+          <Attributes channel="output"/>
+          <Name name="local:dout">Relay</Name>
+          <Description>Relay 1 and 2 are closing contacts, Relay 3 to 6 are changeover </Description>
+        </Parameter>
+			
+      </HostParameterSet>
+    </Connector>
+  </Device>
+</DeviceDescription>
