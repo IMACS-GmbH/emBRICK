@@ -4,6 +4,7 @@
 
 ## Dictionary
 ### [Hardware Products](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products "Hardware Products")
+Here you can find everything Hardware Specific like SPI2Serial-SC16IS740 Driver for the RaspberryBrick 
 ## RaspberryBrick [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products/RaspberryBrick "Heading link")
 ### Driver-SPI2Serial-SC16IS740 [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products/RaspberryBrick/Driver-SPI2Serial-SC16IS740 "Heading link")
 
