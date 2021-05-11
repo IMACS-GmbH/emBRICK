@@ -29,6 +29,7 @@ Here you can find everything Hardware Specific like SPI2Serial-SC16IS740 Driver 
 | Node-RED             | Windows-PC or RaspberryPi | TCP-IP or RSxxx          |[Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/remoteBUS/Node-RED%20via%20TCP-IP%20or%20RSxxx%20(using%20Windows-PC%20or%20RaspberryPi) "Link") |
 | Python               |  Windows-PC or RaspberryPi| TCP-IP or RSxxx          | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx%20(using%20Windows-PC%20or%20RaspberryPi) "Link") |
 
+Dokumentation [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main/Protocol%20Stacks/remoteBUS/_PD_CouplingBrick%20Starterkit.pdf "PDF")
 --------------------
 ### [Sample Applications](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Sample%20Applications "Sample Applications")
 
