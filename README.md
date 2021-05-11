@@ -1,6 +1,6 @@
 
 ![](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/raw/main/emBRICK-Logo%402x.png)
-# emBRICK and brickBus
+# emBRICK
 
 ## Dictionary
 ### [Hardware Products](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products "Hardware Products")
