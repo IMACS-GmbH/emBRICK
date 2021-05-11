@@ -5,14 +5,12 @@
 ## Dictionary
 ### [Hardware Products](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products "Hardware Products")
 Here you can find everything Hardware Specific like SPI2Serial-SC16IS740 Driver for the RaspberryBrick 
-## RaspberryBrick [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products/RaspberryBrick "Heading link")
-### Driver-SPI2Serial-SC16IS740 [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products/RaspberryBrick/Driver-SPI2Serial-SC16IS740 "Heading link")
+### [Protocol Stacks](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Protocol%20Stacks "Protocol Stacks")
 
-# Protocol Stacks [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Protocol%20Stacks "Heading link")
-###Sample Applications [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Sample%20Applications "Heading link")
-####Heading 4 link [Heading link](https://github.com/pandao/editor.md "Heading link") Heading link [Heading link](https://github.com/pandao/editor.md "Heading link")
-#####Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-######Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+### [Sample Applications](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Sample%20Applications "Sample Applications")
+
+### [Videos and Demos](https://github.com/IMACS-GmbH/emBRICK/tree/main/Videos%20and%20Demos "Videos and Demos")
+
 
 ##Headers (Underline)
 
