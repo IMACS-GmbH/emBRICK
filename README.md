@@ -18,11 +18,11 @@
 
 #### [localBUS](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS "localBUS")
 
-| C, C++ via SPI      | Directionlink                                                                   |
-|---------------------|---------------------------------------------------------------------------------|
-| Arduino             | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Arduino) "Link")            | 
-| Beaglebone Black    | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Beaglebone%20Black) "Link") | 
-| Raspberry PI        | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Raspbery%20Pi) "Link")      |
+| C, C++ via SPI      | Dokumentation     | Location         |
+|---------------------|-------------------|------------------|
+| Arduino             | [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Arduino)/Benutzerhandbuch%20ArduinoBrick.pdf "PDF") | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Arduino) "Link")            | 
+| Beaglebone Black    | [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Beaglebone%20Black)/_PD_BeagleboneBrick%20Starterkit-1.pdf "PDF") |[Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Beaglebone%20Black) "Link") | 
+| Raspberry PI        | [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Raspbery%20Pi)/_PD_RaspberryBrick%20Starterkit.pdf"PDF") | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Raspbery%20Pi) "Link")      |
 
 
 #### [remoteBUS](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/remoteBUS "remoteBUS")
