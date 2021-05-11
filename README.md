@@ -41,8 +41,9 @@ PD_CouplingBrickStarterkit [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main
 
 | Programming Language | Plattform                 | Communication Method | Location |
 |----------------------|---------------------------|----------------------|----------|
-| Python               | Windows-PC or RaspberryPi | RSxxx                | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Sample%20Applications/Python/RSxxx "Link")   |
-|                      |                           | TCP-IP               | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Sample%20Applications/Python/TCP-IP "Link")
+| Python               | Windows-PC or RaspberryPi | RSxxx                | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Sample%20Applications/Python/RSxxx "Link")  |
+|                      |                           | TCP-IP               | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Sample%20Applications/Python/TCP-IP "Link") |
+| CODESYS              | Windows-PC or RaspberryPi | TCP-IP or RSxxx      | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Sample%20Applications/Codesys "Link") |
 
 -------------------------
 ### [Videos and Demos](https://github.com/IMACS-GmbH/emBRICK/tree/main/Videos%20and%20Demos "Videos and Demos")
