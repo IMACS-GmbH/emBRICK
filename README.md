@@ -2,13 +2,8 @@
 ![](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/raw/main/emBRICK-Logo%402x.png)
 # emBRICK and brickBus
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
-# Hardware Products [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products "Heading link")
+## Dictionary
+### [Hardware Products](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products "Hardware Products")
 ## RaspberryBrick [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products/RaspberryBrick "Heading link")
 ### Driver-SPI2Serial-SC16IS740 [Heading link](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Hardware%20Products/RaspberryBrick/Driver-SPI2Serial-SC16IS740 "Heading link")
 
