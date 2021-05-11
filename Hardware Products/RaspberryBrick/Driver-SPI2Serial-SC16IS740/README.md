@@ -22,7 +22,7 @@ unter https://www.raspberrypi.org/software/operating-systems/ you can find a the
 ```
 sudo bash
 cd /tmp
-wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK-and-brickBUS/main/Hardware%20Products/RaspberryBrick/Driver-SPI2Serial-SC16IS740/install.sh -O install.sh
+wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Hardware%20Products/RaspberryBrick/Driver-SPI2Serial-SC16IS740/install.sh -O install.sh
 bash install.sh
 ```
 <br />
