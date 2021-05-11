@@ -11,6 +11,14 @@ Here you can find everything Hardware Specific like SPI2Serial-SC16IS740 Driver 
 -------------------
 ### [Protocol Stacks](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Protocol%20Stacks "Protocol Stacks")
 
+#### [localBUS](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS "localBUS")
+
+| File Name       | Link                                                                            | Description   |
+|-----------------|---------------------------------------------------------------------------------|---------------|
+|eB_Applications  | [PDF](https://github.com/IMACS-GmbH/emBRICK/raw/main/eB_Applications.pdf "PDF") |               |
+|eB_Programmer     | [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main/eB_Programmer.pdf "PDF")  |               |
+|eB_System         | [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main/eB_System.pdf "PDF")      |               |
+
 --------------------
 ### [Sample Applications](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Sample%20Applications "Sample Applications")
 
