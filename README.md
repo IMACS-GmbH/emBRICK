@@ -39,8 +39,12 @@ PD_CouplingBrickStarterkit [PDF](https://github.com/IMACS-GmbH/emBRICK/blob/main
 --------------------
 ### [Sample Applications](https://github.com/IMACS-GmbH/emBRICK-and-brickBUS/tree/main/Sample%20Applications "Sample Applications")
 
+| Programming Language | Plattform | Communication Method | Location |
+
 -------------------------
 ### [Videos and Demos](https://github.com/IMACS-GmbH/emBRICK/tree/main/Videos%20and%20Demos "Videos and Demos")
+
+*** In Progress ***
 
 ------------------------
 ## Files
