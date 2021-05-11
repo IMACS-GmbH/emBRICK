@@ -13,7 +13,7 @@ Here you can find everything Hardware Specific like SPI2Serial-SC16IS740 Driver 
 
 #### [localBUS](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS "localBUS")
 
-| C, C++ via SPI      | Link                                                                            |
+| C, C++ via SPI      | Directionlink                                                                   |
 |---------------------|---------------------------------------------------------------------------------|
 | Arduino             | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Arduino) "Link")            | 
 | Beaglebone Black    | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/localBUS/C%2C%20C%2B%2B%20via%20SPI%20(using%20Beaglebone%20Black) "Link") | 
@@ -22,7 +22,7 @@ Here you can find everything Hardware Specific like SPI2Serial-SC16IS740 Driver 
 
 #### [remoteBUS](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/remoteBUS "remoteBUS")
 
-| Programming Language | Plattform                 | Communication Method     | PD_CouplingBrickStarterkit |Link                                |
+| Programming Language | Plattform                 | Communication Method     | PD_CouplingBrickStarterkit | Directionlink                      |
 |----------------------|---------------------------|--------------------------|----------------------------|------------------------------------|
 | C, C++ via TCP-IP    | Windows, MSCV             | TCP-IP                   | Chapter 4                  | [Link](https://github.com/IMACS-mbH/emBRICK/tree/main/Protocol%20Stacks/remoteBUS/C%2C%20C%2B%2B%20via%20TCP-IP%20(using%20Windows%2C%20MSVC) "Link") | 
 | CODESYS              | Windows-PC or RaspberryPi | TCP-IP or RSxxx          | Chapter 5                  | [Link](https://github.com/IMACS-GmbH/emBRICK/tree/main/Protocol%20Stacks/remoteBUS/CODESYS%20via%20TCP-IP%20or%20RSxxx%20(using%20Windows-PC%20or%20RaspberryPi) "Link") | 
