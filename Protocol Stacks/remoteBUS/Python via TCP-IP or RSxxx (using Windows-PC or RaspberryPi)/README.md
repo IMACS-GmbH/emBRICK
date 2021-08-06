@@ -9,11 +9,11 @@
 Run the following command in your terminal:
 
 ```
-In Windows: pip install emBrick
+In Windows: pip install emBRICK
 ```
 
 ```
-In RaspberryPiOs:pip3 install emBrick
+In RaspberryPiOs:pip3 install emBRICK
 ```
 
 ## Usage
