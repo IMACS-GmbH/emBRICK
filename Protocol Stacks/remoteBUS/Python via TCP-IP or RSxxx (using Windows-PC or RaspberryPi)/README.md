@@ -18,7 +18,7 @@ In RaspberryPiOs:pip3 install emBRICK
 
 ## Usage
 
-Please read the PD_CouplingBrickStarterkit.pdf Chapter 8 for more Details. [PD_CouplingBrickStarterkit.pdf](https://github.com/IMACS-GmbH/Python/raw/main/_PD_CouplingBrick%20Starterkit.pdf "Heading link")
+Please read the PD_CouplingBrickStarterkit.pdf Chapter 8 for more Details. [PD_CouplingBrickStarterkit.pdf](https://github.com/IMACS-GmbH/emBRICK/blob/main/Protocol%20Stacks/remoteBUS/_PD_CouplingBrick%20Starterkit.pdf "Heading link")
 
 
 
