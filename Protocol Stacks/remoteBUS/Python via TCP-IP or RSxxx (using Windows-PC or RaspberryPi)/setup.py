@@ -1,10 +1,10 @@
 from distutils.core import setup
 setup(
-  name = 'emBrick',         # How you named your package folder (MyLib)
-  packages = ['emBrick'],   # Chose the same as "name"
-  version = '0.14',      # Start with a small number and increase it with every change you make
+  name = 'emBRICK',         # How you named your package folder (MyLib)
+  packages = ['emBRICK'],   # Chose the same as "name"
+  version = '0.15',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'TYPE YOUR DESCRIPTION HERE',   # Give a short description about your library
+  description = 'Driver to build a connection RemoteMaster <-> LWCS over Ethernet, Modbus TCP & RTU',   # Give a short description about your library
   author = 'IMACS',                   # Type in your name
   author_email = 'serkan.sen@imacs-gmbh.de',      # Type in your E-Mail
   url = 'https://github.com/IMACS-GmbH/emBRICK/tree/master/Python',   # Provide either the link to your github or to your website
@@ -15,7 +15,8 @@ setup(
           'pyserial',
           'pymodbus',
           'sockets',
-          'tabulate'
+          'tabulate',
+          'DateTime'
       ],
   classifiers=[
     'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
