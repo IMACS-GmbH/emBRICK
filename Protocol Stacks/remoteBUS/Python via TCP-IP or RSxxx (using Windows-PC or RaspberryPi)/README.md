@@ -27,9 +27,9 @@ In RaspberryPiOs:pip3 install emBRICK
 ### Copy on Target without Internet
 
 Copy emBRICK-0.07-rpi.tgz & install.sh on the Target and start install.sh Bash Script with
-'''
+```
 bash install.sh
-'''
+```
 
 ## Usage
 
