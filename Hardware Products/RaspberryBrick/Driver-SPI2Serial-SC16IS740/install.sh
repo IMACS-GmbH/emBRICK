@@ -20,23 +20,12 @@ if [ $? -ne 0 ]; then
         exit 1
 fi
 
-lsb_release -a 2>1 | grep "Raspbian GNU/Linux" || (echo -e "$ERR ERROR: Raspbian GNU/Linux required! $NC" 1>&2; exit 1;)
-
-KERNEL=$(uname -r)
-
-VERSION=$(echo $KERNEL | cut -d. -f1)
-PATCHLEVEL=$(echo $KERNEL | cut -d. -f2)
-SUBLEVEL=$(echo $KERNEL | cut -d. -f3 | cut -d- -f1)
-
-KERNELVER=$(($VERSION*100+$PATCHLEVEL));
-
 FREE=`df $PWD | awk '/[0-9]%/{print $(NF-2)}'`
 if [[ $FREE -lt 1048576 ]]; then
   echo -e "$ERR ERROR: 1GB free disk space required (run raspi-config, 'Expand Filesystem') $NC" > /dev/stderr
   exit 1
 fi
 
-KERNEL=$(uname -r)
 
 clear
 WELCOME="These drivers will be compiled and installed:\n
@@ -53,22 +42,8 @@ else
     exit 0
 fi
 
-apt-get update  && apt-get install linux-headers
-
+apt-get update
 apt-get upgrade -y
-apt-get -y install libncurses5-dev bc build-essential raspberrypi-kernel-headers device-tree-compiler gcc-$GCCVER g++-$GCCVER
-
-headerversion=$(dpkg -l | grep raspberrypi-kernel-headers | awk '{ print $3 }')
-kernelversion=$(dpkg -l | grep raspberrypi-kernel | grep bootloader | awk '{ print $3 }')
-
-if [ "$headerversion" == "$kernelversion" ]; then
-        echo -e "$INFO INFO: found kernel header version $headerversion $NC" 1>&2
-else
-        echo -e "$ERR WARNING: kernel is outdated! use 'apt-get install raspberrypi-kernel' to install latest kernel. Then reboot and run this script again - $NC" 1>&2
-        exit 1
-fi
-
-
 
 # compile device tree files
 
