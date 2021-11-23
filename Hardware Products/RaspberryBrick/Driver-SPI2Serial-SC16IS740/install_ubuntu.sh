@@ -126,10 +126,14 @@ WELCOME2=$WELCOME2"\ncontinue installation?"
 
 
 DATE=$(date +"%Y%m%d_%H%M%S")
+echo -e "$INFO INFO: creating backup copy of config: /boot/firmware/config-backup-$DATE.txt $NC" 1>&2
+/bin/cp -rf /boot/firmware/usercfg.txt /boot/firmware/config-$DATE.txt
 echo -e "$INFO INFO: creating backup copy of config: /boot/firmware/usercfg-backup-$DATE.txt $NC" 1>&2
-/bin/cp -rf /boot/firmware/usercfg.txt /boot/config-usercfg-$DATE.txt
+/bin/cp -rf /boot/firmware/usercfg.txt /boot/firmware/usercfg-$DATE.txt
 
 echo -e "$INFO INFO: Using default config.txt $NC" 1>&2
+wget -nv $REPORAW/src/config_ubuntu.txt -O /boot/firmware/config.txt
+echo -e "$INFO INFO: Using default usercfg.txt $NC" 1>&2
 wget -nv $REPORAW/src/usercfg.txt -O /boot/firmware/usercfg.txt
 
 
