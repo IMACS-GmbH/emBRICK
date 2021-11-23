@@ -175,7 +175,7 @@ chmod +x /etc/initramfs-tools/hooks/hwclock
 chmod +x /etc/initramfs-tools/scripts/init-bottom/hwclock
 
 echo -e "$INFO INFO: generating initramfs $NC"
-mkinitramfs -o /boot/initramfs.gz
+mkinitramfs -o /boot/firmware/initramfs.gz
 
 if test -e /boot/firmware/initramfs.gz; then
 	echo -e "$INFO INFO: Installing initramfs $NC"
