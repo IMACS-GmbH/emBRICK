@@ -77,13 +77,13 @@ if grep -q "gpio24" "/usr/sbin/jumper_check.sh"; then
         echo ""
 else
         echo -e "$INFO INFO: Installing RS232/RS485 jumper check in /usr/sbin/jumper_check.sh $NC"
-        cat > /usr/sbin/jumper_check.sh
+        cat /usr/sbin/jumper_check.sh
         echo '# if jumper J301 is not set, switch /dev/ttySC0 to RS485 mode' >>/usr/sbin/jumper_check.sh
         echo '/bin/echo '"'"'24'"'"' > /sys/class/gpio/export || true; /bin/echo '"'"'in'"'"' > /sys/class/gpio/gpio24/direction && /bin/cat /sys/class/gpio/gpio24/value | /bin/grep '"'"'1'"'"' && /usr/sbin/tty-auto-rs485 /dev/ttySC0' >>/usr/sbin/jumper_check.sh
         echo "_NetworkStatus=$(cat /sys/class/net/eth0/operstate)"  >>/usr/sbin/jumper_check.sh
 	echo "if [ "$_NetworkStatus" = "down" ]; then" >>/usr/sbin/jumper_check.sh
 	echo "\t sudo hwclock --hctosys" >>/etc/rc.local >>/usr/sbin/jumper_check.sh
-  cat > /etc/systemd/system/rs232_485_jumper.service
+  cat /etc/systemd/system/rs232_485_jumper.service
   echo '[Unit]' >> /etc/systemd/system/rs232_485_jumper.service
   echo 'Description= if jumper J301 is not set, switch /dev/ttySC0 to RS485 mode' >> /etc/systemd/system/rs232_485_jumper.service
   echo 'Wants=network-online.target' >> /etc/systemd/system/rs232_485_jumper.service
