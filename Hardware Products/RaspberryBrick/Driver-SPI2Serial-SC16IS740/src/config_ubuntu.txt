@@ -1,0 +1,72 @@
+# Please DO NOT modify this file; if you need to modify the boot config, the
+# "usercfg.txt" file is the place to include user changes. Please refer to
+# the README file for a description of the various configuration files on
+# the boot partition.
+
+# The unusual ordering below is deliberate; older firmwares (in particular the
+# version initially shipped with bionic) don't understand the conditional
+# [sections] below and simply ignore them. The Pi4 doesn't boot at all with
+# firmwares this old so it's safe to place at the top. Of the Pi2 and Pi3, the
+# Pi3 uboot happens to work happily on the Pi2, so it needs to go at the bottom
+# to support old firmwares.
+
+[pi4]
+kernel=uboot_rpi_4.bin
+max_framebuffers=2
+
+[pi2]
+kernel=uboot_rpi_2.bin
+# green LED (gpio5) as SD card activity
+dtparam=act_led_gpio=5
+# selects the bcm2835-sdhost SD/MMC driver
+dtoverlay=sdhost
+# enable more than 600mA for USB ports
+max_usb_current=1
+
+[pi3]
+kernel=uboot_rpi_3.bin
+# green LED (gpio5) as SD card activity
+dtoverlay=pi3-act-led,gpio=5,activelow=off
+# disables Bluetooth and restores UART0/ttyAMA0
+dtoverlay=pi3-miniuart-bt
+# enable more than 600mA for USB ports
+max_usb_current=1
+
+[pi3+]
+# green LED (gpio5) as SD card activity
+dtoverlay=pi3-act-led,gpio=5,activelow=off
+# disables Bluetooth and restores UART0/ttyAMA0
+dtoverlay=pi3-miniuart-bt
+# disable more than 600mA for USB ports
+max_usb_current=0
+
+[all]
+arm_64bit=1
+device_tree_address=0x03000000
+
+# The following settings are "defaults" expected to be overridden by the
+# included configuration. The only reason they are included is, again, to
+# support old firmwares which don't understand the "include" command.
+
+enable_uart=1
+cmdline=cmdline.txt
+
+include syscfg.txt
+include usercfg.txt
+
+####
+# I2C
+#dtparam=i2c_arm=on
+
+# SPI
+#dtparam=spi=on
+
+# CAN
+#dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25
+
+# SERIAL PORT, depending on J301 RS232/RS485 mode is selected automatically, see /etc/udev/rules.d/33-ttysc0-rs232-rs485-mode.rules
+#dtoverlay=sc16is7xx-ttysc0-rs232-rs485
+
+# RTC
+#dtoverlay=i2c-rtc,mcp7940x
+
