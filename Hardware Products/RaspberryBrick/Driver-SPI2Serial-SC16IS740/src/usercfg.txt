@@ -2,40 +2,6 @@
 # this file. Please refer to the README file for a description of the various
 # configuration files on the boot partition.
 
-[pi2]
-# green LED (gpio5) as SD card activity
-dtparam=act_led_gpio=5
-
-# selects the bcm2835-sdhost SD/MMC driver
-dtoverlay=sdhost
-
-# enable more than 600mA for USB ports
-max_usb_current=1
-
-
-[pi3]
-
-# green LED (gpio5) as SD card activity
-dtoverlay=pi3-act-led,gpio=5,activelow=off
-
-# disables Bluetooth and restores UART0/ttyAMA0
-dtoverlay=pi3-miniuart-bt
-
-# enable more than 600mA for USB ports
-max_usb_current=1
-
-
-[pi3+]
-# green LED (gpio5) as SD card activity
-dtoverlay=pi3-act-led,gpio=5,activelow=off
-
-# disables Bluetooth and restores UART0/ttyAMA0
-dtoverlay=pi3-miniuart-bt
-
-# disable more than 600mA for USB ports
-max_usb_current=0
-
-####
 # I2C
 dtparam=i2c_arm=on
 
@@ -50,5 +16,3 @@ dtoverlay=sc16is7xx-ttysc0-rs232-rs485
 
 # RTC
 dtoverlay=i2c-rtc,mcp7940x
-
-
