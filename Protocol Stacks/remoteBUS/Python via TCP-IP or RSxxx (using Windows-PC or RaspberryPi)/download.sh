@@ -19,7 +19,7 @@ following Modules for Python3:\n
 if (whiptail --title "emBRICK Module Download & Packing Script" --yesno "$WELCOME" 20 60) then
     echo ""
 else
-	whiptail --title "Download & Packing failed" --msgbox "Try it again!" 8 78
+    whiptail --title "Download & Packing failed" --msgbox "Try it again!" 8 78
     exit 0
 fi
 
