@@ -26,7 +26,7 @@ bash install.sh
 <br />
 <br />
 
-## :large_orange_diamond: Installation Instructions for Ubuntu Serveron Raspberry Pi
+## :large_orange_diamond: Installation Instructions for Ubuntu Server on Raspberry Pi
 
 **:heavy_exclamation_mark: _create a backup copy of your µSD card before applying these steps!_**
 
