@@ -20,7 +20,7 @@ In RaspberryPiOs:pip3 install emBRICK
 
 ### Download
 
-[install.sh](https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install.sh)/install.sh)
+[install.sh](https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install.sh)
 
 [emBRICK-0.07-rpi.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-rpi.tgz)
 
