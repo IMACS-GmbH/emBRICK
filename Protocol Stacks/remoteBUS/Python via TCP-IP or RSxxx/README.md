@@ -24,6 +24,8 @@ In RaspberryPiOs:pip3 install emBRICK
 
 [emBRICK-0.07-rpi.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-rpi.tgz)
 
+[instal_ubuntu.sh](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-ubuntu.tgz)
+
 [emBRICK-0.07-ubuntu.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-ubuntu.tgz)
 
 or create emBRICK-0.07-rpi.tgz yourself with Bash Script download.sh 
