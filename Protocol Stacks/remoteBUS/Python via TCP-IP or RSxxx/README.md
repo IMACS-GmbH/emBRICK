@@ -44,9 +44,9 @@ bash install.sh
 ```
 ### Copy on Target without Internet (Ubuntu Server)
 ```
-wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install.sh -O install.sh
+wget https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install_ubuntu.sh -O install_ubuntu.sh
 wget https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-ubuntu.tgz -O emBRICK-0.07-ubuntu.tgz
-bash install.sh
+bash install_ubuntu.sh
 ```
 
 ## Usage
