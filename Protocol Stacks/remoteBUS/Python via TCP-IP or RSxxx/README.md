@@ -20,13 +20,15 @@ In RaspberryPiOs:pip3 install emBRICK
 
 ### Download
 
-[install.sh](https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx%20(using%20Windows-PC%20or%20RaspberryPi)/install.sh)
+[install.sh](https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install.sh)/install.sh)
 
-[emBRICK-0.07-rpi.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx%20(using%20Windows-PC%20or%20RaspberryPi)/emBRICK-0.07-rpi.tgz)
+[emBRICK-0.07-rpi.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-rpi.tgz)
+
+[emBRICK-0.07-ubuntu.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-ubuntu.tgz)
 
 or create emBRICK-0.07-rpi.tgz yourself with Bash Script download.sh 
 
-[download.sh](https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx%20(using%20Windows-PC%20or%20RaspberryPi)/download.sh)
+[download.sh](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/download.sh)
 ```
 wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/download.sh -O download.sh
 bash download.sh
