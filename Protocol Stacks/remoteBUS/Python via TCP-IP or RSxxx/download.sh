@@ -37,9 +37,11 @@ fi
 
 echo "(Exit status was $exitstatus)"
 
+sudo apt install python3-pip
+
 mkdir emBRICK
 cd emBRICK
-pip3 download --platform=linux_armv7l --only-binary=:all: emBRICK
+pip3 download emBRICK
 cd ..
 tar cvfz $NAME emBRICK
 
