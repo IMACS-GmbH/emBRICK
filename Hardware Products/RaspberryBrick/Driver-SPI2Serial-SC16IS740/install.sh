@@ -26,8 +26,8 @@ if [[ $FREE -lt 1048576 ]]; then
   exit 1
 fi
 
-
 clear
+
 WELCOME="These drivers will be compiled and installed:\n
 - CAN driver (SocketCAN)
 - Serial driver (RS232/RS485)
@@ -53,7 +53,6 @@ wget -nv $REPORAW/src/mcp7940x-i2c-rtc-overlay.dts -O mcp7940x-i2c-rtc-overlay.d
 
 dtc -@ -H epapr -O dtb -W no-unit_address_vs_reg -o mcp2515-can0.dtbo -b 0 mcp2515-can0-overlay.dts
 dtc -@ -H epapr -O dtb -W no-unit_address_vs_reg -o sc16is7xx-ttysc0-rs232-rs485.dtbo -b 0 sc16is7xx-ttysc0-rs232-rs485-overlay.dts
-
 dtc -@ -H epapr -O dtb -W no-unit_address_vs_reg -o mcp7940x-i2c-rtc.dtbo -b 0 mcp7940x-i2c-rtc-overlay.dts
 
 if [ ! -f "sc16is7xx-ttysc0-rs232-rs485.dtbo" ] || [ ! -f "mcp2515-can0.dtbo" ] || [ ! -f "mcp7940x-i2c-rtc.dtbo" ]; then
@@ -61,7 +60,6 @@ if [ ! -f "sc16is7xx-ttysc0-rs232-rs485.dtbo" ] || [ ! -f "mcp2515-can0.dtbo" ] 
  whiptail --title "Error" --msgbox "Installation failed! (driver device tree build failed)" 10 60
  exit 1
 fi
-
 
 /bin/cp -rf mcp2515-can0.dtbo /boot/overlays/mcp2515-can0.dtbo
 /bin/cp -rf sc16is7xx-ttysc0-rs232-rs485.dtbo /boot/overlays/sc16is7xx-ttysc0-rs232-rs485.dtbo
@@ -128,7 +126,6 @@ echo -e "$INFO INFO: creating backup copy of config: /boot/config-backup-$DATE.t
 echo -e "$INFO INFO: Using default config.txt $NC" 1>&2
 wget -nv $REPORAW/src/config.txt -O /boot/config.txt
 
-
 # installing service to start can0 on boot
 if [ ! -f "/bin/systemctl" ]; then
     echo -e "$ERR Warning: systemctl not found, cannot install can0.service $NC" 1>&2
@@ -160,7 +157,6 @@ if test -e /lib/systemd/system/hwclock.service; then
 	systemctl mask hwclock || true
 	rm -f /lib/systemd/system/hwclock.service
 fi
-
 
 echo -e "$INFO INFO: Disabling Bluetooth to use serial port $NC"
 systemctl disable hciuart
@@ -240,7 +236,6 @@ else
 
 fi
 
-
 if grep -q "sc16is7xx" "/etc/profile"; then
         echo ""
 else
@@ -250,7 +245,6 @@ else
         echo "/sbin/lsmod | /bin/grep mcp251x >>/dev/null || /bin/echo -e \"\033[1;31mError:\033[0m driver for SPI2Serial-SC16IS740 CAN port not loaded! installation instructions: https://github.com/IMACS-GmbH/emBRICK/edit/master/Driver-SPI2Serial-SC16IS740\"" >>/etc/profile
         echo "/sbin/lsmod | /bin/grep rtc_ds1307 >>/dev/null || /bin/echo -e \"\033[1;31mError:\033[0m driver for  SPI2Serial-SC16IS740 RTC not loaded! installation instructions: https://github.com/IMACS-GmbH/emBRICK/edit/master/Driver-SPI2Serial-SC16IS740\"" >>/etc/profile
 fi
-
 
 cd /
 
