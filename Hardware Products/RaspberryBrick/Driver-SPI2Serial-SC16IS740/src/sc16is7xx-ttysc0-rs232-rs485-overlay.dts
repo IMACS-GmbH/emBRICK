@@ -30,7 +30,7 @@
 			//pinctrl-0 = <&ttysc0_pins &ttysc0_cs_pins>;			
 			//cs-gpios = <&gpio 7 1>;			
 
-			sc16is740: sc16is740@0 {
+			sc16is740: sc16is740@1 {
 				compatible = "nxp,sc16is740";
 				reg = <1>; /* CE1 */
 				clocks = <&sc16is740_clk>;
