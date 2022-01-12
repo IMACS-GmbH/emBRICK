@@ -45,7 +45,7 @@ wget https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/
 sudo bash install.sh
 ```
 ### Copy on Target without Internet (Ubuntu Server)
-Copy emBRICK-0.07-rpi.tgz & install.sh on the Target and start install.sh Bash Script with
+Copy emBRICK-0.11-ubuntu.tgz & install_ubuntu.sh on the Target and start install_ubuntu.sh Bash Script with
 ```
 wget https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install_ubuntu.sh -O install_ubuntu.sh
 wget https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.11-ubuntu.tgz -O emBRICK-0.11-ubuntu.tgz
