@@ -16,8 +16,8 @@ following Modules for Python3:\n
 - sockets
 - tabulate
 - DateTime
-- numpy
-- scipy\n"
+- scipy
+- numpy\n"
 
 FILEINFO="Founded following File to extract: $FILE\nStart with installing?"
 
