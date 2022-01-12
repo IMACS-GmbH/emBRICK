@@ -14,7 +14,8 @@ following Modules for Python3:\n
 - sockets
 - tabulate
 - DateTime
-- numpy\n"
+- numpy
+- scipy\n"
 
 if (whiptail --title "emBRICK Module Download & Packing Script" --yesno "$WELCOME" 20 60) then
     echo ""
@@ -25,7 +26,7 @@ fi
 
 clear
 
-NAME=$(whiptail --inputbox "How should the Package will be named?" 8 39 emBRICK-0.07-rpi.tgz --title "Example Dialog" 3>&1 1>&2 2>&3)
+NAME=$(whiptail --inputbox "How should the Package will be named?" 8 39 emBRICK-0.11.tgz --title "Example Dialog" 3>&1 1>&2 2>&3)
                                                                         # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 exitstatus=$?

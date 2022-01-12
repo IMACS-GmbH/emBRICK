@@ -16,7 +16,8 @@ following Modules for Python3:\n
 - sockets
 - tabulate
 - DateTime
-- numpy\n"
+- numpy
+- scipy\n"
 
 FILEINFO="Founded following File to extract: $FILE\nStart with installing?"
 
@@ -32,7 +33,7 @@ clear
 if (whiptail --title "emBRICK Module Installation Script" --yesno "$FILEINFO" 20 60) then
     tar xvfz $FILE
 	cd emBRICK
-	python3 -m pip install emBRICK-0.07.tar.gz -f ./ --no-index
+	python3 -m pip install emBRICK-0.11.tar.gz -f ./ --no-index
 else
 	whiptail --title "Installation failed" --msgbox "Try it again!" 8 78
     exit 0
