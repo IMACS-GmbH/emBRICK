@@ -10,7 +10,7 @@ This script installs and configures Linux **Socket CAN**, **Serial port RS232/RS
 
 Install one of the listed RASPBIAN operating system versions from below: 
 
-**Tested by Raspberry Pi OS Kernel Version 5.10  Release date: March 04th 2021
+**Tested with Raspberry Pi OS Kernel Version 5.10  Release date: March 04th 2021
 
 under https://www.raspberrypi.org/software/operating-systems/ you can find a the current version of the PI OS.
 
