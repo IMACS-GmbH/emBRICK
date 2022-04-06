@@ -19,22 +19,30 @@ Under Linux: pip3 install emBRICK
 ## Installation on RaspberryPI without Internet Connection
 
 ### Download
-
-[install.sh](https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install.sh)
-
-[emBRICK-0.07-rpi.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.07-rpi.tgz)
-
-[install_ubuntu.sh](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install_ubuntu.sh)
-
-[emBRICK-0.11-ubuntu.tgz](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/emBRICK-0.11-ubuntu.tgz)
-
-or create emBRICK-0.07-rpi.tgz yourself with Bash Script download.sh
-
+Create emBRICK-0.18-rpi.tgz yourself with Bash Script download.sh
 [download.sh](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/download.sh)
 ```
+cd /tmp
 wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/download.sh -O download.sh
 sudo bash download.sh
 ```
+### Install
+[install.sh](https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install.sh)
+
+[install_ubuntu.sh](https://github.com/IMACS-GmbH/emBRICK/raw/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install_ubuntu.sh)
+With Pi Os:
+```
+cd /tmp
+wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install.sh -O install.sh
+sudo bash install.sh
+```
+With Ubuntu LTS:
+```
+cd /tmp
+wget https://raw.githubusercontent.com/IMACS-GmbH/emBRICK/main/Protocol%20Stacks/remoteBUS/Python%20via%20TCP-IP%20or%20RSxxx/install_ubuntu.sh -O install_ubuntu.sh
+sudo bash install_ubuntu.sh
+```
+
 
 ### Copy on Target without Internet (Raspberry Pi OS)
 
