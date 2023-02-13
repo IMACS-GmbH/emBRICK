@@ -1,5 +1,6 @@
 # Import socket from Module Sockets
 import socket
+import sys
 # Import threading from Module Threaded
 import threading
 # to lock the buffer
@@ -113,6 +114,8 @@ class emBrickConnection:
         self.updateRate = 0.0
         self.counter = 0
         self.Brick_Input = {}
+        self.updateThread = None
+        self.running = False
 
     def start_ethernet(self):
         # Print the Program Title
@@ -151,15 +154,18 @@ class emBrickConnection:
         # Initialize the Functions to start the Program
         init()
         bB.createEmptyList()
+        self.running = True
         command.update()
-        update = threading.Timer(0.1, connect.update)
-        update.start()
+        self.updateThread = threading.Timer(0.1, connect.update)
+        self.updateThread.start()
 
     def close(self):
         # Send the function to close the connection with the emBrick Node
+        self.running = False
+        self.updateThread.join()
         for i in range(len(self.ipList)):
             command.close(i)
-            self.nodes[i].shutdown(SHUT_WR)
+            self.nodes[i].shutdown(socket.SHUT_WR)
             self.nodes[i].close()
 
     def update_first(self):
@@ -171,7 +177,7 @@ class emBrickConnection:
     @staticmethod
     def update():
         # Sending the "update" Command to the LWC's
-        while True:
+        while connect.running:
             put = {}
             for keys, i in zip(bB.put, bB.put.values()):
                 put[keys] = bytes(i)

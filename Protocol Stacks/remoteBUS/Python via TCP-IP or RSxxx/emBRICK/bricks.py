@@ -172,6 +172,7 @@ class CAE_B3U4I:
         self.energy = [0] * 3
         self.maxsize = sys.maxsize
         self.run = False
+        self.raw_power = [0] * 3
 
     def start(self):
         self.run = True
@@ -332,11 +333,11 @@ class CAE_B3U4I:
             self.offset_miso + 8]
         power_l3 = (bB_update.updated[self.node][self.offset_miso + 9] << 8) + bB_update.updated[self.node][
             self.offset_miso + 10]
-        power = [power_l1, power_l2, power_l3]
+        self.raw_power = [power_l1, power_l2, power_l3]
         if self.brick_id == 4602:
-            self.power = [i * self.pow_val_602 if i > self.filter_max or i < self.filter_min else 0 for i in np.int16(power)]
+            self.power = [i * self.pow_val_602 if i > self.filter_max or i < self.filter_min else 0 for i in np.int16(self.raw_power)]
         else:
-            self.power = [i * self.pow_val_603 if i > self.filter_max or i < self.filter_min else 0 for i in np.int16(power)]
+            self.power = [i * self.pow_val_603 if i > self.filter_max or i < self.filter_min else 0 for i in np.int16(self.raw_power)]
 
         return self.power
 

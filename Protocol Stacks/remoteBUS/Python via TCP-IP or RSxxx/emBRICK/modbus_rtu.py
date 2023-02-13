@@ -118,6 +118,7 @@ class connection:
         bB_update.update_first()
         bB.createEmptyList()
         updatcycle = threading.Thread(target=bB_update.update)
+        updatcycle.daemon = True.
         updatcycle.start()
         init()
         #time.sleep(1)

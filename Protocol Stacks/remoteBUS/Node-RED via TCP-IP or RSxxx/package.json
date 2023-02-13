@@ -1,22 +1,23 @@
 {
-  "name": "red-contrib-embrick",
-  "version": "0.1.2",
+  "name": "@embrick/red-contrib-embrick",
+  "version": "0.2.0",
   "description": "embrick modules",
   "main": "none",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "node-red",
     "embrick",
     "Digital Input",
-	"Digital Output",
-	"Analog Output",
-	"Analog Input",
-	"imacs",
-	"Analog Vis",
-	"Digital Vis",
-	"Analog Force",
-	"Digital Force"
+    "Digital Output",
+    "Analog Output",
+    "Analog Input",
+    "imacs",
+    "Analog Vis",
+    "Digital Vis",
+    "Analog Force",
+    "Digital Force"
   ],
   "author": "imacs",
   "license": "ISC",
@@ -26,8 +27,22 @@
       "Digital Output": "nodes/digital_output.js",
       "Analog Output": "nodes/analog_output.js",
       "Analog Input": "nodes/analog_input.js",
-      "Digital VisCond": "nodes/ui_digital_vis_cond.js",
-      "ui_analog_vis_cond": "nodes/ui_analog_vis_cond.js"
+      "ui_analog-vis": "nodes/ui_analog-vis.js",
+      "ui_analog-force": "nodes/ui_analog-force.js",
+      "ui_digital-vis": "nodes/ui_digital-vis.js",
+      "ui_digital-force": "nodes/ui_digital-force.js"
     }
+  },
+  "dependencies": {
+	"node-red-dashboard": "latest",
+	"node-red-contrib-config": "latest",
+	"node-red-contrib-boolean-logic-ultimate": "latest"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IMACS-GmbH/emBRICK/tree/master/Node-Red"
   }
 }
