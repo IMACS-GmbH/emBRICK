@@ -2,35 +2,16 @@
 # Import Threading Module
 import threading
 import time
+import emBRICK.binary_utils as binary_utils
 # Import pymodbus for the Modbus TCP Module
 from pymodbus.client.sync import ModbusTcpClient as ModbusClient
 # For Current Date
 from datetime import datetime
-lock = threading.RLock()
+
+# wird scheinbbar nicht verwendet
+#lock = threading.RLock()
 filename = 'error.txt'
 
-def splitBytes(list16bit):
-    # Function to split a list with 16 bit elements into 8 bit element list
-    list8bit = []
-    for value in list16bit:
-        a = (value >> 8) & 0xff
-        b = value & 0xff
-        list8bit.append(a)
-        list8bit.append(b)
-    return list8bit
-
-def addBytes(list8bit):
-    list16bit = []
-    if not len(list8bit) // 2:
-        list8bit.append(0)
-    for num in range(len(list8bit)):
-        if not num % 2:
-            byte0 = list8bit[num] << 8
-        else:
-            byte1 = list8bit[num]
-            byte = byte0 + byte1
-            list16bit.append(byte)
-    return list16bit
 
 class data_from_local_master:
     # Reading the init Data from Local Master and split the 16 bit elements into 8 bit
@@ -43,7 +24,7 @@ class data_from_local_master:
             # Reads in the Init Data in the address range 1000h ... 107 ch
             responce = connect.node[n].read_input_registers(4096,104, unit = connect.unit_id)
             self.data16[n] = responce.registers
-            self.data8[n] = splitBytes(self.data16[n])
+            self.data8[n] = binary_utils.convert16bitTo8bitList(self.data16[n])
 getInfo = data_from_local_master()
 
 class local_master:
@@ -151,7 +132,7 @@ class connection:
             except:
                 continue
             if self.updates[n] != 0:
-                self.updated[n] = splitBytes(self.updates[n])
+                self.updated[n] = binary_utils.convert16bitTo8bitList(self.updates[n])
         #bB.createEmptyList()
 
     def update(self):
@@ -160,7 +141,7 @@ class connection:
             for n in range(len(self.node)):
                 num_bricks = local.number_of_bricks[n]
                 if not bB.put[n] == []:
-                    bB.set[n] = addBytes(bB.put[n])
+                    bB.set[n] = binary_utils.convert8bitTo16bitList(bB.put[n])
                     # print('Set:', bB.set[n])
                     arguments = {
                         'read_address': 0,
@@ -174,7 +155,7 @@ class connection:
                     except:
                         continue
                     if self.updates[n] != 0:
-                        self.updated[n] = splitBytes(self.updates[n])
+                        self.updated[n] = binary_utils.convert16bitTo8bitList(self.updates[n])
                 else:
                     responce = self.node.read_input_registers(0, bB.buffer_length, unit=n)
                     try:
@@ -182,7 +163,7 @@ class connection:
                     except:
                         continue
                     if self.updates[n] != 0:
-                        self.updated[n] = splitBytes(self.updates[n])
+                        self.updated[n] = binary_utils.convert16bitTo8bitList(self.updates[n])
             time.sleep(connect.updateRate)
 
 

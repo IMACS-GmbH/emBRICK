@@ -5,6 +5,8 @@ import time
 import math
 import json
 from datetime import datetime
+import emBRICK.binary_utils as binary_utils 
+
 # Import pymodbus for the Modbus RTU Module
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 lock = threading.Lock()
@@ -15,33 +17,6 @@ ERROR = open(filename, "w+")
 brick_name = {2181: "CAE_G8Di8Do", 4602: "CAE_B3U4I", 4603: "CAE_B3U4I", 2470: "CAE_G2Mi2Ao", 2471: "CAE_G2Mi2Ao",
             2472: "CAE_G2Mi2Ao", 2431: "CAE_G4Ai4Tmp", 2432: "CAE_G4Ai4Tmp", 2433: "CAE_G4Ai4Tmp", 2434: "CAE_G4Ai4Tmp",
             2435: "CAE_G4Ai4Tmp", 2436: "CAE_G4Ai4Tmp"}
-
-
-def splitBytes(list16bit):
-    ''' Function to split a list with 16 bit elements into 8 bit element list '''
-    list8bit = []
-    for value in list16bit:
-        a = (value >> 8) & 0xFF
-        b = value & 0xFF
-        list8bit.append(a)
-        list8bit.append(b)
-    return list8bit
-
-
-def addBytes(list8bit):
-    ''' Function to add two 8 bit element from a list to one 16 bit element and put them in a list '''
-    list16bit = []
-    if not len(list8bit) // 2:
-        list8bit.append(0)
-    for num in range(len(list8bit)):
-        if not num % 2:
-            byte0 = list8bit[num] << 8
-        else:
-            byte1 = list8bit[num]
-            byte = byte0 + byte1
-            list16bit.append(byte)
-    return list16bit
-
 
 class local_master:
     ''' Sorting the information about the local master '''
@@ -107,7 +82,8 @@ class connection:
         bB_update.getLWCsInfo()
         for id in self.unit_id:
             self.master["local" + str(id)] = local_master(bB_update.local_data[id][0], bB_update.local_data[id][1], ((bB_update.local_data[id][2] << 8) + bB_update.local_data[id][3]),
-                        bB_update.local_data[id][4],bB_update.local_data[id][5], bB_update.local_data[id][6], bB_update.local_data[id][7], bB_update.local_data[id][8])                 
+                        bB_update.local_data[id][4],bB_update.local_data[id][5], bB_update.local_data[id][6], bB_update.local_data[id][7], bB_update.local_data[id][8])                
+            
             self.slave["master" + str(id)] = {}
             for i in range(self.master["local" + str(id)].number_bricks):
                 found = brick_name.get((bB_update.local_data[id][9+(i*11)+5] << 8) + bB_update.local_data[id][9+(i*11)+6], "Not found!")
@@ -118,7 +94,7 @@ class connection:
         bB_update.update_first()
         bB.createEmptyList()
         updatcycle = threading.Thread(target=bB_update.update)
-        updatcycle.daemon = True.
+        updatcycle.daemon = True
         updatcycle.start()
         init()
         #time.sleep(1)
@@ -142,7 +118,7 @@ class brickBus_communication:
                 responce = connect.node.read_input_registers(4096,104, unit = id)
                 if not responce.isError():
                     data_16byte = responce.registers
-                    self.local_data[id] = splitBytes(data_16byte)
+                    self.local_data[id] = binary_utils.convert16bitTo8bitList(data_16byte)
                     break
                 else:
                     ERROR.write(f'{datetime.now()}\tERROR: Connection to the Coupling-Master with Modbus Address {id} failed!\n')
@@ -168,7 +144,7 @@ class brickBus_communication:
                     ERROR.write(f'{datetime.now()}\tERROR: Checksum Error or Timeout\n')
                     i += 1
                 if self.updates[id] != 0:
-                    self.updated[id] = splitBytes(self.updates[id])
+                    self.updated[id] = binary_utils.convert16bitTo8bitList(self.updates[id])
                     break
             if i == 5:
                 ERROR.write(f'{datetime.now()}\tERROR: Connection with LWCs on Modbus Address {id} not possible\n')
@@ -186,7 +162,7 @@ class brickBus_communication:
             for id in connect.unit_id:
                 if not bB.put[id] == []:
                     with lock:
-                        bB.set[id] = addBytes(bB.put[id])
+                        bB.set[id] = binary_utils.convert8bitTo16bitList(bB.put[id])
                 arguments = {
                     'read_address': 0,
                     'read_count': bB.buffer_length[id],
@@ -194,20 +170,25 @@ class brickBus_communication:
                     'write_registers': bB.set[id],
                 }
 
-                responce = connect.node.readwrite_registers(unit=id, **arguments)
-                if not responce.isError():
-                    self.updates[id] = responce.registers
-                else:
-                    ERROR.write(f'{datetime.now()}\tERROR: Checksum Error or Timeout Error\n')
+                try:
+                    response = connect.node.readwrite_registers(unit=id, **arguments)
+                    self.updates[id] = response.registers
+                except ConnectionException as e:
+                    ERROR.write(f'{datetime.now()}\tERROR: Connection error: {e}\n')
+                except ModbusException as e:
+                    ERROR.write(f'{datetime.now()}\tERROR: Modbus error: {e}\n')
+                except Exception as e:
+                    ERROR.write(f'{datetime.now()}\tERROR: Unknown error: {e}\n')
 
                 if self.updates[id] != 0:
                     lock.acquire()
-                    self.updated[id] = splitBytes(self.updates[id])
+                    self.updated[id] = binary_utils.convert16bitTo8bitList(self.updates[id])
 
                     lock.release()
                 if self.stopThread:
                     ERROR.close()
                     raise SystemExit()
+            time.sleep(connect.updateRate)
 
 
 bB_update = brickBus_communication()

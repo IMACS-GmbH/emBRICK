@@ -18,8 +18,9 @@ def findBricks():
     '''
     Check connected Bricks and configure the corresponding objects
     '''
+    
+    # TODO: braucht man das global hier? 
     global brick_info
-    bricks = {}
 
     bricks = {2181: CAE_G8Di8Do, 4602: CAE_B3U4I, 4603: CAE_B3U4I, 2470: CAE_G2Mi2Ao, 2471: CAE_G2Mi2Ao,
               2472: CAE_G2Mi2Ao, 2431: CAE_G4Ai4Tmp, 2432: CAE_G4Ai4Tmp, 2433: CAE_G4Ai4Tmp, 2434: CAE_G4Ai4Tmp,
@@ -31,7 +32,7 @@ def findBricks():
     for node in connect.unit_id:
         for i in range(connect.master["local" + str(node)].number_bricks):
             id = connect.slave["master" + str(node)]["Brick" + str(i + 1)].brick_id
-            found = bricks.get(id, "None")
+            found = bricks.get(id, "None") # find brick name in dictionary or otherwise return "None"
             if found == "None":
                 error = open("error.txt", "a+")
                 error.write(f'{datetime.now()} ERROR: No Brick with ID {id} found.\n')
